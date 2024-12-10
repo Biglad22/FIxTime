@@ -149,6 +149,8 @@ function HeroSection({className =''}){
         <section className={`w-full p-4 relative flex flex-col items-center justify-center bg-[#161616] rounded-[1.5rem] overflow-hidden  ${className}`}>
 
             <video 
+                preload='auto'
+                poster="./assets/img/hero-vid-poster.png"
                 autoPlay 
                 loop
                 muted 
