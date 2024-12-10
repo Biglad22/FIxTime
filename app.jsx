@@ -263,7 +263,7 @@ function Footer({className=''}) {
 function NavLink({title, link}){
     return(
         <a href={link}
-            className="capitalize text-sm text-white no-underline block p-2"
+            className="capitalize text-sm text-white no-underline block p-2 navlink"
         >   
             <span>{title}</span>
             {/* boxIcon is a third party icons package  */}
