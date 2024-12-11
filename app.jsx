@@ -2,11 +2,11 @@
 const nav_links_data = [
     {   
         title : 'follow us on x',
-        link: 'https://x.com'
+        link: 'https://x.com/fLxtime1'
     },
     {   
         title : 'join Discord',
-        link: 'https://x.com'
+        link: ' https://discord.com/invite/KYJyxH42xk'
     },
     {   
         title : 'docs',
@@ -22,7 +22,7 @@ const footer_links = [
     {   
         title : 'flex with us @FIxtime1',
         icon: '/assets/icon/x.svg',
-        link:'#'
+        link:'https://x.com/fLxtime1'
     },
     {   
         title : 'join the fun at discord',
@@ -62,21 +62,33 @@ const flex_cards = [
 
 const token_map = [
     {
-        title : '0% to allocation',
-        icon : './assets/img/community-img.png'
-    },
-    {
-        title : '0% to allocation',
+        title : '70% mining rewards',
         icon : './assets/img/reward-img.png'
     },
     {
-        title : '0% to allocation',
+        title : '8% staking rewards',
+        icon : './assets/img/stake-img.png'
+    },
+    {
+        title : '2% airdrop',
+        icon : './assets/img/airdrop-img.png'
+    },
+    {
+        title : '10% partnerships',
+        icon : './assets/img/partners-img.png'
+    },
+    {
+        title : '5% founding team (3-years locked)',
+        icon : './assets/img/community-img.png'
+    },
+    {
+        title : '5% strategic reserves',
         icon : './assets/img/reserve-img.png'
     },
     {
-        title : 'X total supply',
+        title : '10B total supply',
         icon : './assets/img/timeframe-img.png'
-    },
+    }
 ]
   
 
@@ -125,7 +137,7 @@ function NavBar(){
         <nav className="px-0 py-4 sticky top-0 left-auto z-50  w-full bg-[#003338]">
             <div className="flex justify-between items-center w-full">
                 <a href="#" className="no-underline block">
-                    <img src="./assets/img/Logo.png" alt="our logo" 
+                    <img src="./assets/img/Logo.png" alt="FlexTime logo - a decentralized mining platform" 
                         className="h-[1.5rem]"
                     />
                 </a>
@@ -220,7 +232,7 @@ function TokenomicsSection({className = ''}) {
         <div className="max-w-7xl mx-auto ">
           <div className="flex flex-col lg:flex-row gap-8 items-center overflow-hidden">
             <TokenomicsDescription className="flex-1 lg:flex-[40%]"/>
-            <TokenomicsMap className="flex-1 lg:flex-[60%]" />
+            <TokenomicsMap className="flex-1 lg:flex-[60%] py-3" />
           </div>
         </div>
       </section>
@@ -230,7 +242,7 @@ function TokenomicsSection({className = ''}) {
 // Stake Section Component
 function StakeSection({className =''}) {
     return (
-        <div className={`bg-[#191B1A] py-16 px-4 md:pl-16 md:px-8 h-fit relative rounded-[1.5rem] bg-[url('/assets/img/stack.png')] bg-[30%] bg-[length:auto_40%]  md:bg-contain bg-right bg-no-repeat ${className}`}>
+        <div className={`bg-[#191B1A] py-16 px-4 md:pl-16 md:px-8 h-fit relative rounded-[1.5rem] md:bg-[url('/assets/img/stack.png')]  md:bg-[length:auto_40%]  md:bg-contain bg-right bg-no-repeat ${className}`}>
             <div className="absolute inset-0 bg-[#191B1A]  mix-blend-screen rounded-[1.5rem]"></div>
             <h2 className="text-2xl font-bold mb-4 text-white">Stake your time</h2>
             <p className=" text-lg text-[rgba(255,255,255,0.8)]">
@@ -266,6 +278,7 @@ function NavLink({title, link}){
     return(
         <a href={link}
             className="capitalize text-sm text-white no-underline block p-2 navlink"
+            target="_blank"
         >   
             <span>{title}</span>
             {/* boxIcon is a third party icons package  */}
@@ -340,11 +353,11 @@ function FooterLinks({title, icon, link}) {
 /// MAIN MAP
 function TokenomicsMap({className = ''}) {
     return(
-        <div className={`flex items-center justify-center flex-col min-[580px]:flex-row -mb-[5rem] min-[580px]:mb-0 overflow-hidden gap-3 ${className}`}>
+        <div className={`flex items-center justify-center flex-col min-[580px]:flex-row -mb-[5rem] min-[580px]:mb-0 overflow-hidden gap-4 ${className}`}>
             <img src="./assets/img/coin-img.png" alt="our token" className=" w-[90%] h-auto min-[580px]:w-[14rem] min-[580px]:h-[14rem] object-contain object-center order-2 min-[580px]:order-1" />
             <div className="flex flex-col gap-1 order-1 min-[580px]:order-2" >
                 {
-                    token_map.map((map, index)=>(<MapPoint {...map} key={map.title + ' ' + index} className={`ml-0 ${index > 0 && index < 3 ? 'min-[580px]:ml-[1rem]' : 'min-[580px]:-ml-[1.2rem]' }`} />))
+                    token_map.map(map=>(<MapPoint {...map} key={map.title} className='p-1' />))
                 }
             </div>
         </div>
