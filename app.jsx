@@ -194,7 +194,7 @@ function ProjectDesc({className = ''}) {
     <section id="projectDesc" className={`h-fit flex items-stretch flex-col sm:flex-row gap-4 ${className}`}>
         <div className="bg-[#191B1A] rounded-[1.5rem] p-6 flex-1">
             
-            <img src="./assets/img/circle-text.png" alt="circle-text" 
+            <img src="./assets/img/circle-text.png" alt="circle-text" loading="lazy"
                 className="w-[6rem] h-[6rem] object-center object-contain mb-4 ml-auto" 
             />
             <div className="flex flex-col items-start w-full gap-2 mb-2">
@@ -204,7 +204,7 @@ function ProjectDesc({className = ''}) {
             </div>
         </div>
         <div className=" w-full sm:w-[30%] flex-none flex items-center justify-center p-4 rounded-[6vh] rounded-bl-[0.33rem] logo-wrapper ">
-            <img src="./assets/img/colored-logo.png" alt="our logo" 
+            <img src="./assets/img/colored-logo.png" alt="our logo" loading="lazy"
                 className="w-auto h-[10rem] sm:w-full sm:h-auto object-contain object-center"
             />
         </div>
@@ -324,7 +324,7 @@ function FilledBtn({title, icon='', className ='', href}){
 function FlexerCard({title, desc, icon}) {
     return(
         <div className="bg-[#191B1A] w-full sm:w-[33%] md:w-[20%]  rounded-[1.5rem] px-4 py-8 flex flex-col gap-2 items-center justify-start">
-            <img src={icon} alt={`${title} icon`} className="w-[2.5rem] h-[2.5rem] m-3 " />
+            <img src={icon} alt={`${title} icon`} className="w-[2.5rem] h-[2.5rem] m-3 " loading="lazy" />
             <h6 className="text-2xl capitalize text-white text-center font-bold">{title}</h6>
             <p className="text-sm text-[rgba(255,255,255,0.6)] text-center">{desc}</p>
         </div>
@@ -354,7 +354,9 @@ function FooterLinks({title, icon, link}) {
 function TokenomicsMap({className = ''}) {
     return(
         <div className={`flex items-center justify-center flex-col min-[580px]:flex-row -mb-[5rem] min-[580px]:mb-0 overflow-hidden gap-4 ${className}`}>
-            <img src="./assets/img/coin-img.png" alt="our token" className=" w-[90%] h-auto min-[580px]:w-[14rem] min-[580px]:h-[14rem] object-contain object-center order-2 min-[580px]:order-1" />
+            <img src="./assets/img/coin-img.png" alt="our token" loading="lazy" 
+                className=" w-[90%] h-auto min-[580px]:w-[14rem] min-[580px]:h-[14rem] object-contain object-center order-2 min-[580px]:order-1" 
+            />
             <div className="flex flex-col gap-1 order-1 min-[580px]:order-2" >
                 {
                     token_map.map(map=>(<MapPoint {...map} key={map.title} className='p-1' />))
@@ -368,7 +370,7 @@ function TokenomicsMap({className = ''}) {
 function MapPoint({icon, title, className=''}) {
     return(
         <div className={`text-white capitalize flex items-center gap-4 w-fit p-2 transition duration-300 ${className}`}>
-            <img src={icon} alt={`${title} icon`} className="w-[4rem] h-[4rem] object-contain object-center" />
+            <img src={icon} alt={`${title} icon`} className="w-[4rem] h-[4rem] object-contain object-center" loading="lazy" />
             <h6 className="text-base font-bold">
                 {title}
             </h6>
