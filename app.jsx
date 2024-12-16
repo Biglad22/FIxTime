@@ -1,4 +1,4 @@
-/// DUMMY DATA USED IN APP
+/// DATA USED IN APP
 const nav_links_data = [
     {   
         title : 'follow us on x',
@@ -6,15 +6,15 @@ const nav_links_data = [
     },
     {   
         title : 'join Discord',
-        link: ' https://discord.com/invite/KYJyxH42xk'
+        link: 'https://discord.com/invite/KYJyxH42xk'
     },
     {   
         title : 'docs',
-        link: 'https://x.com'
+        link: ''
     },
     {   
         title : 'trade $FLXT',
-        link: 'https://x.com'
+        link: ''
     }, 
 ]
 
@@ -27,12 +27,12 @@ const footer_links = [
     {   
         title : 'join the fun at discord',
         icon: '/assets/icon/discord.svg',
-        link:'#'
+        link:'https://discord.com/invite/KYJyxH42xk'
     },
     {   
         title : 'CA: SampleCAxFLXxiVnRP8NtvhXzMNFCxE1HaYzdV9x7',
         icon: '/assets/icon/cre.svg',
-        link:'#'
+        link:'/'
     } 
 ]
 
@@ -136,7 +136,7 @@ function NavBar(){
     return(
         <nav className="px-0 py-4 sticky top-0 left-auto z-50  w-full bg-[#003338]">
             <div className="flex justify-between items-center w-full">
-                <a href="#" className="no-underline block">
+                <a href="/" className="no-underline block">
                     <img src="./assets/img/Logo.png" alt="FlexTime logo - a decentralized mining platform" 
                         className="h-[1.5rem]"
                     />
@@ -148,7 +148,7 @@ function NavBar(){
                 </button>
                 <div className={`w-[105%]  md:w-fit h-[100vh] md:h-fit  flex flex-col p-4 md:p-0 absolute top-[100%] -right-[2.5%] md:relative md:flex-row md:top-0 md:right-0 gap-3 items-center items-center justify-center bg-[#003338] ${icon === 'menu' ? 'invisible' : 'visible'} md:visible transition-all duration-300 `}>
                     {nav_links_data.map(link => (<NavLink link={link.link} title={link.title} key={link.title} />))}
-                    <FilledBtn title='console' onClick={()=>alert('action unavailable')} />
+                    <FilledBtn title='console' onClick={()=>alert('SERVICE IS COMING SOON')} />
                 </div>
             </div>
         </nav>
@@ -191,7 +191,7 @@ function HeroSection({className =''}){
 // Project Description
 function ProjectDesc({className = ''}) {
   return (
-    <section id="projectDesc" className={`h-fit flex items-stretch flex-col sm:flex-row gap-4 ${className}`}>
+    <section id="project-description" className={`h-fit flex items-stretch flex-col sm:flex-row gap-4 ${className}`}>
         <div className="bg-[#191B1A] rounded-[1.5rem] p-6 flex-1">
             
             <img src="./assets/img/circle-text.png" alt="circle-text" loading="lazy"
@@ -220,7 +220,7 @@ function Flexer({className = ''}) {
             <div className="flex gap-3 items-stretch justify-center flex-col sm:flex-row">
                 {flex_cards.map(({description, id, icon, title})=>(<FlexerCard icon={icon} title={title} desc={description} key={id} />))}
             </div>
-            <FilledBtn title='join FlexTime discord' icon="right-arrow-alt" />
+            <FilledBtn title='join FlexTime discord' icon="right-arrow-alt" href={'https://discord.com/invite/KYJyxH42xk'} />
         </div>
     )
 }
@@ -274,18 +274,31 @@ function Footer({className=''}) {
 
 ///NAV LINK
 //nav link takes title of the link and the actual link
-function NavLink({title, link}){
-    return(
-        <a href={link}
-            className="capitalize text-sm text-white no-underline block p-2 navlink"
-            target="_blank"
-        >   
-            <span>{title}</span>
-            {/* boxIcon is a third party icons package  */}
-            <i className='bx bx-up-arrow-alt rotate-45 text-sm ml-2'></i>
-        </a>
-    )
-}
+const NavLink= React.memo(({title, link})=>{
+    if (link) {
+        return(
+            <a href={link}
+                className="capitalize text-sm text-white no-underline block p-2 navlink"
+                target="_blank"
+            >   
+                <span>{title}</span>
+                {/* boxIcon is a third party icons package  */}
+                <i className='bx bx-up-arrow-alt rotate-45 text-sm ml-2'></i>
+            </a>
+        )
+    }
+    else {
+        return(
+            <button onClick={()=>alert('SERVICE IS COMING SOON')}
+                className="capitalize text-sm text-white no-underline block p-2 navlink"
+            >   
+                <span>{title}</span>
+                {/* boxIcon is a third party icons package  */}
+                <i className='bx bx-up-arrow-alt rotate-45 text-sm ml-2'></i>
+            </button>
+        )
+    }
+});
 
   
 // Tokenomics Description Component
@@ -297,7 +310,7 @@ function TokenomicsDescription({className=''}) {
             <p className="mb-6 text-lg">
               $FLXT is the primary token of FlxTime for rewards and governance.
             </p>
-            <FilledBtn title='read more in docs' icon="right-arrow-alt" className='mx-auto lg:mx-0' />
+            <FilledBtn title='read more in docs' icon="right-arrow-alt" className='mx-auto lg:mx-0'  onClick={()=>alert('service coming soon')} />
         </div>
     );
 }
@@ -307,9 +320,10 @@ function TokenomicsDescription({className=''}) {
 
 ///FILLED BUTTON
 // icon is the name of the icon to be placed in the button  NOTE: all valid names are available at https://boxicons.com/
-function FilledBtn({title, icon='', className ='', href}){
-    return(
-        <a href={href}
+const FilledBtn = React.memo(({title, icon='', className ='', href='', onClick=''}) => {
+
+    if (href){ return (
+        <a href={href} target="_blank"
             className={`capitalize font-bold text-[#190D13] bg-[#29EEFF] text-sm flex gap-1 items-center justify-center py-2 px-4 rounded-[0.5rem] w-fit ${className}`}
         >
             <span>
@@ -317,11 +331,24 @@ function FilledBtn({title, icon='', className ='', href}){
             </span>
             {icon && <i className={`bx bx-${icon} font-bold text-sm`}></i>}
         </a>
-    )
-}
+    )}
+    else if(onClick){
+        return(
+            <button onClick={onClick}
+            className={`capitalize font-bold text-[#190D13] bg-[#29EEFF] text-sm flex gap-1 items-center justify-center py-2 px-4 rounded-[0.5rem] w-fit ${className}`}
+            >
+                <span>
+                    {title}
+                </span>
+                {icon && <i className={`bx bx-${icon} font-bold text-sm`}></i>}
+            </button>
+        )
+    }
+    
+})
 
 //FLEXER CARD
-function FlexerCard({title, desc, icon}) {
+const FlexerCard = React.memo(({title, desc, icon})=>{
     return(
         <div className="bg-[#191B1A] w-full sm:w-[33%] md:w-[20%]  rounded-[1.5rem] px-4 py-8 flex flex-col gap-2 items-center justify-start">
             <img src={icon} alt={`${title} icon`} className="w-[2.5rem] h-[2.5rem] m-3 " loading="lazy" />
@@ -329,14 +356,14 @@ function FlexerCard({title, desc, icon}) {
             <p className="text-sm text-[rgba(255,255,255,0.6)] text-center">{desc}</p>
         </div>
     )
-}
+})
 
 ///SEPARATOR
-function Separator({className =''}) {
+const Separator = React.memo(({className =''})=>{
     return(
         <div className={`w-full h-[3rem] sm:h-[8rem] bg-[url('/assets/img/Separator.png')] bg-cover bg-no-repeat bg-center ${className}`}></div>
     )
-}
+})
 
 // FOOTER LINKS 
 function FooterLinks({title, icon, link}) {
