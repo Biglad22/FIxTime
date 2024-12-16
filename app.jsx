@@ -42,52 +42,52 @@ const flex_cards = [
       title: "Rewards",
       description:
         "Submit proofs to the oracle, and you will be rewarded for valid submissions.",
-      icon:"./assets/icon/rewards.svg", // Path to the image
+      icon:"/assets/icon/rewards.svg", // Path to the image
     },
     {
       id: 2,
       title: "Community",
       description:
         "Be part of a global, fast-growing, and active Flexers community.",
-      icon: "./assets/icon/union.svg", // Path to the image
+      icon: "/assets/icon/union.svg", // Path to the image
     },
     {
       id: 3,
       title: "Multi-modal",
       description:
         "Choose where you want to mine. Use Crankk, ESP32-S3 Board, Docker, and more.",
-      icon: "./assets/icon/cards.svg", // Path to the image
+      icon: "/assets/icon/cards.svg", // Path to the image
     },
 ];
 
 const token_map = [
     {
         title : '70% mining rewards',
-        icon : './assets/img/reward-img.png'
+        icon : '/assets/img/reward-img.png'
     },
     {
         title : '8% staking rewards',
-        icon : './assets/img/stake-img.png'
+        icon : '/assets/img/stake-img.png'
     },
     {
         title : '2% airdrop',
-        icon : './assets/img/airdrop-img.png'
+        icon : '/assets/img/airdrop-img.png'
     },
     {
         title : '10% partnerships',
-        icon : './assets/img/partners-img.png'
+        icon : '/assets/img/partners-img.png'
     },
     {
         title : '5% founding team (3-years locked)',
-        icon : './assets/img/community-img.png'
+        icon : '/assets/img/community-img.png'
     },
     {
         title : '5% strategic reserves',
-        icon : './assets/img/reserve-img.png'
+        icon : '/assets/img/reserve-img.png'
     },
     {
         title : '10B total supply',
-        icon : './assets/img/timeframe-img.png'
+        icon : '/assets/img/timeframe-img.png'
     }
 ]
   
@@ -137,7 +137,7 @@ function NavBar(){
         <nav className="px-0 py-4 sticky top-0 left-auto z-50  w-full bg-[#003338]">
             <div className="flex justify-between items-center w-full">
                 <a href="/" className="no-underline block">
-                    <img src="./assets/img/Logo.png" alt="FlexTime logo - a decentralized mining platform" 
+                    <img src="/assets/img/Logo.png" alt="FlexTime logo - a decentralized mining platform" 
                         className="h-[1.5rem]"
                     />
                 </a>
@@ -162,14 +162,14 @@ function HeroSection({className =''}){
 
             <video 
                 preload='auto'
-                poster="./assets/img/hero-vid-poster.png"
+                poster="/assets/img/hero-vid-poster.png"
                 autoPlay 
                 loop
                 muted 
                 playsInline
                 className="h-full w-full min-w-full min-h-full object-cover  absolute z-[1]"
             >
-                <source src="./assets/vids/hero-vid.mp4" type="video/mp4" />
+                <source src="/assets/vids/hero-vid.mp4" type="video/mp4" />
                 <div className="absolute inset-0 bg-[url('/assets/hero.png')] bg-no-repeat bg-cover bg-center opacity-60 rounded-[1.5rem]"></div>
             </video>
             <div className="absolute w-full h-full  z-[2] bg-[rgba(0,0,0)] opacity-40 rounded-[1.5rem]"></div>
@@ -194,7 +194,7 @@ function ProjectDesc({className = ''}) {
     <section id="project-description" className={`h-fit flex items-stretch flex-col sm:flex-row gap-4 ${className}`}>
         <div className="bg-[#191B1A] rounded-[1.5rem] p-6 flex-1">
             
-            <img src="./assets/img/circle-text.png" alt="circle-text" loading="lazy"
+            <img src="/assets/img/circle-text.png" alt="circle-text" loading="lazy"
                 className="w-[6rem] h-[6rem] object-center object-contain mb-4 ml-auto" 
             />
             <div className="flex flex-col items-start w-full gap-2 mb-2">
@@ -204,7 +204,7 @@ function ProjectDesc({className = ''}) {
             </div>
         </div>
         <div className=" w-full sm:w-[30%] flex-none flex items-center justify-center p-4 rounded-[6vh] rounded-bl-[0.33rem] logo-wrapper ">
-            <img src="./assets/img/colored-logo.png" alt="our logo" loading="lazy"
+            <img src="/assets/img/colored-logo.png" alt="our logo" loading="lazy"
                 className="w-auto h-[10rem] sm:w-full sm:h-auto object-contain object-center"
             />
         </div>
@@ -381,7 +381,7 @@ function FooterLinks({title, icon, link}) {
 function TokenomicsMap({className = ''}) {
     return(
         <div className={`flex items-center justify-center flex-col min-[580px]:flex-row -mb-[5rem] min-[580px]:mb-0 overflow-hidden gap-4 ${className}`}>
-            <img src="./assets/img/coin-img.png" alt="our token" loading="lazy" 
+            <img src="/assets/img/coin-img.png" alt="our token" loading="lazy" 
                 className=" w-[90%] h-auto min-[580px]:w-[14rem] min-[580px]:h-[14rem] object-contain object-center order-2 min-[580px]:order-1" 
             />
             <div className="flex flex-col gap-1 order-1 min-[580px]:order-2" >
