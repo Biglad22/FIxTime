@@ -10,29 +10,29 @@ const nav_links_data = [
     },
     {   
         title : 'docs',
-        link: ''
+        link: 'https://flxtime.fun/docs/'
     },
     {   
         title : 'trade $FLXT',
-        link: ''
+        link: 'https://solscan.io/token/CwMuoD9nK6LEN6BwzLVZEmbuJXm8rXfzRGaM1YGim14h'
     }, 
 ]
 
 const footer_links = [
     {   
         title : 'flex with us @FIxtime1',
-        icon: '/assets/icon/x.svg',
+        icon: './assets/icon/x.svg',
         link:'https://x.com/fLxtime1'
     },
     {   
         title : 'join the fun at discord',
-        icon: '/assets/icon/discord.svg',
+        icon: './assets/icon/discord.svg',
         link:'https://discord.com/invite/KYJyxH42xk'
     },
     {   
-        title : 'CA: SampleCAxFLXxiVnRP8NtvhXzMNFCxE1HaYzdV9x7',
-        icon: '/assets/icon/cre.svg',
-        link:'/'
+        title : 'CA: CwMuoD9nK6LEN6BwzLVZEmbuJXm8rXfzRGaM1YGim14h',
+        icon: './assets/icon/cre.svg',
+       
     } 
 ]
 
@@ -42,52 +42,52 @@ const flex_cards = [
       title: "Rewards",
       description:
         "Submit proofs to the oracle, and you will be rewarded for valid submissions.",
-      icon:"/assets/icon/rewards.svg", // Path to the image
+      icon:"../assets/icon/rewards.svg", // Path to the image
     },
     {
       id: 2,
       title: "Community",
       description:
         "Be part of a global, fast-growing, and active Flexers community.",
-      icon: "/assets/icon/union.svg", // Path to the image
+      icon: "../assets/icon/union.svg", // Path to the image
     },
     {
       id: 3,
       title: "Multi-modal",
       description:
         "Choose where you want to mine. Use Crankk, ESP32-S3 Board, Docker, and more.",
-      icon: "/assets/icon/cards.svg", // Path to the image
+      icon: "../assets/icon/cards.svg", // Path to the image
     },
 ];
 
 const token_map = [
     {
         title : '70% mining rewards',
-        icon : '/assets/img/reward-img.png'
+        icon : './assets/img/reward-img.png'
     },
     {
         title : '8% staking rewards',
-        icon : '/assets/img/stake-img.png'
+        icon : './assets/img/stake-img.png'
     },
     {
         title : '2% airdrop',
-        icon : '/assets/img/airdrop-img.png'
+        icon : './assets/img/airdrop-img.png'
     },
     {
         title : '10% partnerships',
-        icon : '/assets/img/partners-img.png'
+        icon : './assets/img/partners-img.png'
     },
     {
         title : '5% founding team (3-years locked)',
-        icon : '/assets/img/community-img.png'
+        icon : './assets/img/community-img.png'
     },
     {
         title : '5% strategic reserves',
-        icon : '/assets/img/reserve-img.png'
+        icon : './assets/img/reserve-img.png'
     },
     {
         title : '10B total supply',
-        icon : '/assets/img/timeframe-img.png'
+        icon : './assets/img/timeframe-img.png'
     }
 ]
   
@@ -98,7 +98,7 @@ const token_map = [
 function App (){
     return(
         <div className="bg-[#003338] ">
-            <div className="flex flex-col relative gap-0 mx-0 w-full px-[1rem] sm:px-[2rem] min-[1500px]:px-0 min-[1500px]:w-[1300px] min-[1500px]:mx-auto">
+            <div className=" flex flex-col relative gap-0 mx-0 w-full px-[1rem] sm:px-[2rem] min-[1500px]:px-0 min-[1500px]:w-[1300px] min-[1500px]:mx-auto">
                 
                 <NavBar />
                 <HeroSection className='flex-1 py-4 w-full min-h-[82vh] my-4 sm:my-8 mt-2' />
@@ -136,8 +136,8 @@ function NavBar(){
     return(
         <nav className="px-0 py-4 sticky top-0 left-auto z-50  w-full bg-[#003338]">
             <div className="flex justify-between items-center w-full">
-                <a href="/" className="no-underline block">
-                    <img src="/assets/img/Logo.png" alt="FlexTime logo - a decentralized mining platform" 
+                <a href="#" className="no-underline block">
+                    <img src="../assets/img/Logo.png" alt="FlexTime logo - a decentralized mining platform" 
                         className="h-[1.5rem]"
                     />
                 </a>
@@ -148,7 +148,7 @@ function NavBar(){
                 </button>
                 <div className={`w-[105%]  md:w-fit h-[100vh] md:h-fit  flex flex-col p-4 md:p-0 absolute top-[100%] -right-[2.5%] md:relative md:flex-row md:top-0 md:right-0 gap-3 items-center items-center justify-center bg-[#003338] ${icon === 'menu' ? 'invisible' : 'visible'} md:visible transition-all duration-300 `}>
                     {nav_links_data.map(link => (<NavLink link={link.link} title={link.title} key={link.title} />))}
-                    <FilledBtn title='console' onClick={()=>alert('SERVICE IS COMING SOON')} />
+                    <FilledBtn title='console' href='https://console.flxtime.fun/' />
                 </div>
             </div>
         </nav>
@@ -162,23 +162,23 @@ function HeroSection({className =''}){
 
             <video 
                 preload='auto'
-                poster="/assets/img/hero-vid-poster.png"
+                poster="../assets/img/hero-vid-poster.png"
                 autoPlay 
                 loop
                 muted 
                 playsInline
                 className="h-full w-full min-w-full min-h-full object-cover  absolute z-[1]"
             >
-                <source src="/assets/vids/hero-vid.mp4" type="video/mp4" />
-                <div className="absolute inset-0 bg-[url('/assets/hero.png')] bg-no-repeat bg-cover bg-center opacity-60 rounded-[1.5rem]"></div>
+                <source src="../assets/vids/hero-vid.mp4" type="video/mp4" />
+                <div className="absolute inset-0 bg-[url('./assets/hero.png')] bg-no-repeat bg-cover bg-center opacity-60 rounded-[1.5rem]"></div>
             </video>
             <div className="absolute w-full h-full  z-[2] bg-[rgba(0,0,0)] opacity-40 rounded-[1.5rem]"></div>
             <div className="relative z-[3]">
-                <h1 className="text-white text-6xl text-center font-bold">FIxTime</h1>
-                <h6 className="text-white text-lg text-center">Make time more rewarding.</h6>
+                <h1 className="text-white text-6xl md:text-8xl text-center font-bold">FIxTime</h1>
+                <h6 className="text-white text-lg md:text-2xl text-center">Make time more rewarding.</h6>
             </div>
 
-            <a href="#projectDesc" className="block absolute bottom-4 z-10 animate-bounce text-[rgb(255,255,255)] no-underline">
+            <a id="project-description" href="#project-description" className="block absolute bottom-4 z-10 animate-bounce text-[rgb(255,255,255)] no-underline">
                 <span className="w-fit mx-auto block">
                     Learn more
                 </span>
@@ -191,10 +191,10 @@ function HeroSection({className =''}){
 // Project Description
 function ProjectDesc({className = ''}) {
   return (
-    <section id="project-description" className={`h-fit flex items-stretch flex-col sm:flex-row gap-4 ${className}`}>
+    <section className={`h-fit flex items-stretch flex-col sm:flex-row gap-4 ${className}`}>
         <div className="bg-[#191B1A] rounded-[1.5rem] p-6 flex-1">
             
-            <img src="/assets/img/circle-text.png" alt="circle-text" loading="lazy"
+            <img src="../assets/img/circle-text.png" alt="circle-text" loading="lazy"
                 className="w-[6rem] h-[6rem] object-center object-contain mb-4 ml-auto" 
             />
             <div className="flex flex-col items-start w-full gap-2 mb-2">
@@ -204,7 +204,7 @@ function ProjectDesc({className = ''}) {
             </div>
         </div>
         <div className=" w-full sm:w-[30%] flex-none flex items-center justify-center p-4 rounded-[6vh] rounded-bl-[0.33rem] logo-wrapper ">
-            <img src="/assets/img/colored-logo.png" alt="our logo" loading="lazy"
+            <img src="../assets/img/colored-logo.png" alt="our logo" loading="lazy"
                 className="w-auto h-[10rem] sm:w-full sm:h-auto object-contain object-center"
             />
         </div>
@@ -242,7 +242,7 @@ function TokenomicsSection({className = ''}) {
 // Stake Section Component
 function StakeSection({className =''}) {
     return (
-        <div className={`bg-[#191B1A] py-16 px-4 md:pl-16 md:px-8 h-fit relative rounded-[1.5rem] md:bg-[url('/assets/img/stack.png')]  md:bg-[length:auto_40%]  md:bg-contain bg-right bg-no-repeat ${className}`}>
+        <div className={`bg-[#191B1A] py-16 px-4 md:pl-16 md:px-8 h-fit relative rounded-[1.5rem] md:bg-[url('./assets/img/stack.png')]  md:bg-[length:auto_40%]  md:bg-contain bg-right bg-no-repeat ${className}`}>
             <div className="absolute inset-0 bg-[#191B1A]  mix-blend-screen rounded-[1.5rem]"></div>
             <h2 className="text-2xl font-bold mb-4 text-white">Stake your time</h2>
             <p className=" text-lg text-[rgba(255,255,255,0.8)]">
@@ -283,7 +283,7 @@ const NavLink= React.memo(({title, link})=>{
             >   
                 <span>{title}</span>
                 {/* boxIcon is a third party icons package  */}
-                <i className='bx bx-up-arrow-alt rotate-45 text-sm ml-2'></i>
+                <i className='bx bx-up-arrow-alt rotate-45 text-sm ml-1'></i>
             </a>
         )
     }
@@ -294,7 +294,7 @@ const NavLink= React.memo(({title, link})=>{
             >   
                 <span>{title}</span>
                 {/* boxIcon is a third party icons package  */}
-                <i className='bx bx-up-arrow-alt rotate-45 text-sm ml-2'></i>
+                <i className='bx bx-up-arrow-alt rotate-45 text-sm ml-1'></i>
             </button>
         )
     }
@@ -310,7 +310,7 @@ function TokenomicsDescription({className=''}) {
             <p className="mb-6 text-lg">
               $FLXT is the primary token of FlxTime for rewards and governance.
             </p>
-            <FilledBtn title='read more in docs' icon="right-arrow-alt" className='mx-auto lg:mx-0'  onClick={()=>alert('service coming soon')} />
+            <FilledBtn title='read more in docs' icon="right-arrow-alt" className='mx-auto lg:mx-0'  href='https://flxtime.fun/docs/' />
         </div>
     );
 }
@@ -361,14 +361,14 @@ const FlexerCard = React.memo(({title, desc, icon})=>{
 ///SEPARATOR
 const Separator = React.memo(({className =''})=>{
     return(
-        <div className={`w-full h-[3rem] sm:h-[8rem] bg-[url('/assets/img/Separator.png')] bg-cover bg-no-repeat bg-center ${className}`}></div>
+        <div className={`w-full h-[3rem] sm:h-[8rem] bg-[url('./assets/img/Separator.png')] bg-cover bg-no-repeat bg-center ${className}`}></div>
     )
 })
 
 // FOOTER LINKS 
 function FooterLinks({title, icon, link}) {
     return(
-        <a href={link} className="text-gray-400 hover:text-white group flex items-center gap-2 max-w-full">
+        <a href={link} target="_blank" className="text-gray-400 hover:text-white group flex items-center gap-2 max-w-full">
             {icon && <img src={icon} className="w-[1.2rem] h-[1.2rem] object-contain  object-center"/>}
             <span className="text-ellipsis capitalize overflow-hidden text-nowrap">{title}</span>
         </a>
@@ -381,7 +381,7 @@ function FooterLinks({title, icon, link}) {
 function TokenomicsMap({className = ''}) {
     return(
         <div className={`flex items-center justify-center flex-col min-[580px]:flex-row -mb-[5rem] min-[580px]:mb-0 overflow-hidden gap-4 ${className}`}>
-            <img src="/assets/img/coin-img.png" alt="our token" loading="lazy" 
+            <img src="./assets/img/coin-img.png" alt="our token" loading="lazy" 
                 className=" w-[90%] h-auto min-[580px]:w-[14rem] min-[580px]:h-[14rem] object-contain object-center order-2 min-[580px]:order-1" 
             />
             <div className="flex flex-col gap-1 order-1 min-[580px]:order-2" >
