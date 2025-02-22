@@ -97,7 +97,7 @@ const token_map = [
 ///============== MAIN HOME PAGE COMPONENT
 function App (){
     return(
-        <div className="bg-[#003338] ">
+        <div className="bg-[#003338] overflow-y-hidden">
             <div className=" flex flex-col relative gap-0 mx-0 w-full px-[1rem] sm:px-[2rem] min-[1500px]:px-0 min-[1500px]:w-[1300px] min-[1500px]:mx-auto">
                 
                 <NavBar />
