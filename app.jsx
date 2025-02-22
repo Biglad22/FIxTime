@@ -146,7 +146,7 @@ function NavBar(){
                 >
                     <i className={`bx bx-${icon} bx-md`}></i>
                 </button>
-                <div className={`w-[105%]  md:w-fit h-[100vh] md:h-fit  flex flex-col p-4 md:p-0 absolute top-[100%] -right-[2.5%] md:relative md:flex-row md:top-0 md:right-0 gap-3 items-center items-center justify-center bg-[#003338] ${icon === 'menu' ? 'invisible' : 'visible'} md:visible transition-all duration-300 `}>
+                <div className={`w-[105%]  md:w-fit h-[100vh] md:h-fit  flex flex-col p-4 md:p-0 absolute top-[100%] md:relative md:flex-row md:top-0 md:right-0 gap-3 items-center items-center justify-center bg-[#003338] ${icon === 'menu' ? '-right-[200%]' : '-right-[2.5%]'} md:visible transition-all duration-500 `}>
                     {nav_links_data.map(link => (<NavLink link={link.link} title={link.title} key={link.title} />))}
                     <FilledBtn title='console' href='https://console.flxtime.fun/' />
                 </div>
