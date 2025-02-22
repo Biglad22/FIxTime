@@ -278,7 +278,7 @@ const NavLink= React.memo(({title, link})=>{
     if (link) {
         return(
             <a href={link}
-                className="capitalize text-sm text-white no-underline block p-2 navlink"
+                className="capitalize text-sm text-gray-300 transition-all duration-300 hover:text-white no-underline block p-2 navlink"
                 target="_blank"
             >   
                 <span>{title}</span>
